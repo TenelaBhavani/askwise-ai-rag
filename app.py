@@ -44,12 +44,18 @@ from splitters.text_splitter import TextSplitter
 # =========================================================
 # FLASK APP
 # =========================================================
-
 app = Flask(__name__)
 
 app.secret_key = os.getenv(
     "FLASK_SECRET_KEY",
     "askwise-development-secret-key"
+)
+
+app.config.update(
+    SESSION_COOKIE_SAMESITE="None",
+    SESSION_COOKIE_SECURE=True,
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_PATH="/"
 )
 
 CORS(
@@ -63,6 +69,7 @@ CORS(
     ]
 )
 
+git push origin main
 
 # =========================================================
 # CONFIGURATION
