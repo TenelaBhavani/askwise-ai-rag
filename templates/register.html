@@ -1,0 +1,262 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Askwise - Register</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            font-family: Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at top left,
+                    rgba(118, 104, 245, 0.15),
+                    transparent 35%),
+                radial-gradient(circle at bottom right,
+                    rgba(66, 199, 186, 0.12),
+                    transparent 35%),
+                #f7f8fc;
+        }
+
+        .register-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        .register-card {
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 18px;
+
+            border: 1px solid #e5e7ef;
+
+            box-shadow:
+                0 20px 60px rgba(42, 52, 82, 0.10);
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+
+            margin: 0 auto 15px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 15px;
+
+            color: white;
+
+            background:
+                linear-gradient(145deg, #7668f5, #4a9cf5);
+
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin: 0;
+
+            text-align: center;
+
+            color: #172033;
+
+            font-size: 28px;
+        }
+
+        .subtitle {
+            margin: 10px 0 28px;
+
+            text-align: center;
+
+            color: #8992a6;
+
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #465269;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #dfe3ec;
+
+            border-radius: 9px;
+
+            outline: none;
+
+            font-size: 14px;
+
+            color: #202a3d;
+
+            transition: 0.2s;
+        }
+
+        input:focus {
+            border-color: #7568ee;
+
+            box-shadow:
+                0 0 0 3px rgba(117, 104, 238, 0.10);
+        }
+
+        button {
+            width: 100%;
+
+            margin-top: 5px;
+
+            padding: 13px;
+
+            border: 0;
+
+            border-radius: 9px;
+
+            background:
+                linear-gradient(110deg, #7568ee, #5585ef);
+
+            color: white;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 8px 18px rgba(98, 105, 229, 0.25);
+        }
+
+        .login-link {
+            margin-top: 22px;
+
+            text-align: center;
+
+            color: #8992a6;
+
+            font-size: 13px;
+        }
+
+        .login-link a {
+            color: #6c61dc;
+
+            text-decoration: none;
+
+            font-weight: 700;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="register-container">
+
+    <div class="register-card">
+
+        <div class="logo">
+            A
+        </div>
+
+        <h1>Create Account</h1>
+
+        <p class="subtitle">
+            Create your Askwise account
+        </p>
+
+        <form method="POST" action="{{ url_for('register') }}">
+
+            <div class="form-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Choose a username"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                >
+
+            </div>
+
+            <button type="submit">
+                Create Account
+            </button>
+
+        </form>
+
+        <div class="login-link">
+
+            Already have an account?
+
+            <a href="{{ url_for('login') }}">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+```
